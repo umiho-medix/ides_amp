@@ -1,0 +1,337 @@
+<!doctype html>
+<html amp lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>写真ギャラリーAMP</title>
+    <link rel="canonical" href="http://ides.jp/amp/photo.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+   <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <style amp-custom>
+.swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  /* Fix of Webkit flickering */
+  z-index: 1;
+}
+.swiper-container-no-flexbox .swiper-slide {
+  float: left;
+}
+.swiper-container-vertical > .swiper-wrapper {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.swiper-container-android .swiper-slide,
+.swiper-wrapper {
+  -webkit-transform: translate3d(0px, 0, 0);
+  -moz-transform: translate3d(0px, 0, 0);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
+}
+.swiper-container-multirow > .swiper-wrapper {
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.swiper-container-free-mode > .swiper-wrapper {
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  margin: 0 auto;
+}
+.swiper-slide {
+  -webkit-flex-shrink: 0;
+  -ms-flex: 0 0 auto;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color:rgb(220,220,220);
+	margin: 0;
+	padding: 0;
+	font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+	font-size: 0.8em;
+}
+
+main {
+	min-width: 320px;
+	max-width: 960px;
+	width: 100vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.box-center {
+	
+}
+
+.mv-container {
+	position:relative;
+}
+
+.mv-container__heading1 {
+	width: 100vw;
+	text-align: center;
+	font-size: 3em;
+	color: rgba(255,255,255,1.00);
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top:50%;
+	left: 0;
+	transform:translateY(-50%);
+	z-index: 999;
+	background-color: rgba(0,0,0,0.58);
+}
+
+.main-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.photo-container {
+	width:100%;
+	padding:5px 0;
+	margin: 5px 0;
+	box-sizing: border-box;
+	background-color: rgba(255,255,255,1.00);
+	border-radius: 4px;
+}
+
+.photo-container__heading {
+	padding: 0;
+	margin: 10px 0 0 0;
+	background-color: rgba(0,0,0,1.00);
+	color: #fff;
+	line-height: 1;
+	display: inline-block;
+}
+
+.photo-container__summery {
+	padding: 5px 0;
+	margin: 0;
+	text-align: center;
+	background-color: #ECDED2;
+}
+
+.photo-list {
+	margin: 0;
+	padding:0;
+	list-style: none;
+	
+}
+
+.photo-list__item {
+	position:relative;
+}
+
+.img-cover {
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+}
+
+.photo-list__item--title {
+	margin: 0;
+	padding: 5px;
+	background: rgba(0,0,0,0.60);
+	color:#FFFFFF;
+	position:absolute;
+	bottom: 0;
+	width:100%;
+	box-sizing: border-box;
+}
+
+.other-thumb {
+	width:100%;
+	
+		}
+.other-thumb__list {
+	margin: 0;
+	padding: 10px;
+	background: #FFFFFF;
+	list-style: none;
+	font-size: 0;
+}
+
+.other-thumb__item {
+	width:100%;
+	display: inline-block;
+}
+
+
+.img-responsive {
+	display: block;
+	width:100%;
+	height: auto;
+	
+}
+
+.img-center {
+	position:absolute;
+	top:50%;
+	transform: translateY(-50%);
+}
+</style>
+</head>
+
+<body>
+	<header class="box-center mv-container">
+		<amp-carousel width="400" height="300" layout="responsive" type="slides" autoplay delay="5000">
+			<amp-img layout="responsive" src="img/sliders/P1140037.jpg" width="2048" height="1536" alt=""></amp-img>
+			<amp-img layout="responsive" src="img/sliders/P1045369.jpg" width="1024" height="768" alt=""></amp-img>
+			<amp-img layout="responsive" src="img/sliders/P1150089.jpg" width="2048" height="1536" alt=""></amp-img>
+			<amp-img layout="responsive" src="img/sliders/PB190483.jpg" width="2048" height="1536" alt=""></amp-img>
+			<amp-img layout="responsive" src="img/sliders/P1150066.jpg" width="2048" height="1536" alt=""></amp-img>
+		</amp-carousel>
+		<h1 class="mv-container__heading1">写真一覧</h1>
+	</header>
+	<main class="main-container">
+		<section class="photo-container">
+			<h2 class="photo-container__heading">2017年桜</h2>
+			<p class="photo-container__summery">アークヒルズの桜</p>
+			<ul class="photo-list">
+				<li class="photo-list__item">
+				<div class="img-cover">
+				<amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/P4050098-min.jpg" width="643" height="857" alt=""/>
+				</div>
+<p class="photo-list__item--title">写真タイトル</p>
+			</li>
+				<li class="photo-list__item">
+		    <div class="img-cover">
+		    <amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/P4050102-min.jpg" width="1078" height="808" alt=""/>
+					</div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/P4050177-min.jpg" width="1077" height="808" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+			</ul>
+		</section>
+		<section class="photo-container">
+			<h2 class="photo-container__heading">GARAGE</h2>
+			<p class="photo-container__summery">四谷のダーツバー</p>
+			<ul class="photo-list">
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/P4050100-min.jpg" width="1078" height="808" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/P4050115-min.jpg" width="1078" height="808" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/P4050099-min.jpg" width="1078" height="808" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+			</ul>
+		</section>
+		<section class="photo-container">
+			<h2 class="photo-container__heading">ZOOLS</h2>
+			<p class="photo-container__summery">西荻窪のダーツバー</p>
+			<ul class="photo-list">
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/P1060181-min.jpg" width="1201" height="901" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/PB100023-min.jpg" width="1201" height="901" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/PB110027-min.jpg" width="1078" height="808" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+			</ul>
+		</section>
+		<section class="photo-container">
+			<h2 class="photo-container__heading">紅葉</h2>
+			<p class="photo-container__summery">小石川後楽園の紅葉</p>
+			<ul class="photo-list">
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/PB270028-min.jpg" width="1201" height="901" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/PB270051-min.jpg" width="1078" height="808" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/PB250055-min.JPG" width="606" height="808" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+			</ul>
+		</section>
+		<section class="photo-container">
+			<h2 class="photo-container__heading">動物園</h2>
+			<p class="photo-container__summery">上野動物園の動物たち</p>
+			<ul class="photo-list">
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/P1050029-min.jpg" width="1078" height="808" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/P1050110-min.jpg" width="1078" height="808" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+				<li class="photo-list__item"><div class="img-cover"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/P1050046-min.jpg" width="1078" height="808" alt=""/></div>
+			    <p class="photo-list__item--title">写真タイトル</p></li>
+			</ul>
+		</section>
+		<section class="other-thumb">
+		
+			<ul class="other-thumb__list">
+				<li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/DSCF1737.jpg" width="1024" height="768" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/DSCF1738.jpg" width="1024" height="768" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/DSCF1758.jpg" width="1024" height="768" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1045276.jpg" width="1024" height="768" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1045359.jpg" width="1024" height="768" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1045363.jpg" width="1024" height="768" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1045424.jpg" width="1024" height="768" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1140002.jpg" width="2048" height="1536" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1140005.jpg" width="2048" height="1536" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1140009.jpg" width="2048" height="1536" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1140014.jpg" width="2048" height="1536" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1140039.jpg" width="2048" height="1536" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1150058.jpg" width="2048" height="1536" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1150073.jpg" width="2048" height="1536" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1150077.jpg" width="2048" height="1536" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/P1150091.jpg" width="2048" height="1536" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/PB190482.jpg" width="2048" height="1536" alt=""/></li>
+			    <li class="other-thumb__item"><amp-img role="button" tabIndex="1" on="tap:headline-image-lightbox" layout="responsive" src="img/20170807/PB190484.jpg" width="2048" height="1536" alt=""/></li>
+			</ul>
+		</section>
+		<amp-image-lightbox id="headline-image-lightbox" layout="nodisplay"></amp-image-lightbox>
+	</main>
+</body>
+</html>

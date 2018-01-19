@@ -1,0 +1,78 @@
+/* Scss Document */
+@import "swiper.css";
+
+
+$bg-color : rgb(220,220,220);
+
+
+body {
+	background-color:$bg-color;
+	margin: 0;
+	padding: 0;
+	font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+}
+
+main {
+	min-width: 320px;
+	max-width: 960px;
+	width: 100vw;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.box-center {
+	display: flex;
+	align-items: center;
+}
+
+.mv-container {
+	height: 400px;
+	width: 100vw;
+	background: url(../img/P3210314-min.jpg) no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.mv-container__heading1 {
+	width: 100vw;
+	text-align: center;
+	font-size: 5em;
+	color: rgba(255,255,255,1.00);
+	margin: 0;
+	padding: 0;
+}
+
+.main-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.article-body {
+	padding: 10px;
+	line-height: 2.2em;
+}
+.img-cover {
+	overflow: hidden;
+	position: relative;
+}
+
+
+
+.img-responsive {
+	display: block;
+	width:100%;
+	height: auto;
+	
+}
+
+@media (max-width:767px) {
+	body {
+		font-size: 0.8em;
+	}
+	
+	.mv-container__heading1 {
+		font-size: 3.5em;
+	}
+	
+}
